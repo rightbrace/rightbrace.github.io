@@ -143,7 +143,7 @@ function generateOutput() {
     row.appendChild(btnTd);
 
     let btn = document.createElement("div");
-    btn.innerText = "Delete";
+    btn.innerText = "Delete Row";
     btn.classList.add("button");
     btn.onclick = () => {
         table.removeChild(row);

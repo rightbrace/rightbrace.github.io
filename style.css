@@ -1,12 +1,20 @@
 html, body {
-    background-color: #fffdd0;
-    color: #444444;
+    background: #333332;
+    color: #e6e6de;
+
+    margin: 0;
+    padding: 0;
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#output {
+    padding: 20px;
+}
+
 table {
-    background: white;
+    background: rgb(92, 92, 92);
+    width: 100%;
 }
 
 td {
@@ -48,27 +56,29 @@ td {
 .container {
     display: flex;
     flex-direction: row;
-
-    margin-top: 20px;
-    border: 1px solid gray;
-    background: #dad8b5;
-
 }
 
 #content-item {
-    flex-grow: 1;
+    flex-grow: 2;
     height: 100%;
     padding-left: 30px;
+    max-width: 50vw;
 }
 
 #tabbar {
     flex-basis: 10%;
+    flex-grow: 1;
+    max-width: 200px;
     display: flex;
     flex-direction: column;
 }
 
-.tab {
+#right-bar {
+    flex-basis: 10%;
+    flex-grow: 1;
+}
 
+.tab {
 
     user-select: none;
 
@@ -80,6 +90,8 @@ td {
     align-items: center;
     
     background-color: white;
+    color: black;
+
     width: 100%;
     z-index: 100;
     transition: width 0.2s;
@@ -108,18 +120,14 @@ td {
 }
 
 .error-message {
-    color: #8a130f;
+    color: #f19f9c;
 }
 
-#reset {
-    padding: 10px;
-    text-align: right;
-}
 
 .button {
     display: inline-block;
     padding: 5px;
-    background: #81e2e9;
+    background: #2279dd;
     border: 1px solid black;
     border-radius: 5px;
 
@@ -132,4 +140,9 @@ td {
 .button:hover {
     background: #c396d8;
     cursor: pointer;
+}
+
+.big.button {
+    display: inline-block;
+    margin: 10px;
 }
