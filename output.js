@@ -173,7 +173,7 @@ function generateRow() {
     .custom(row => {
         if (filled("str-work-demands")) {
             row._push("1");
-            row.text("str-work_demands");
+            row.text("str-work-demands");
         } else {
             row.blank(2);
         }
