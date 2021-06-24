@@ -34,8 +34,14 @@
                     <input type="checkbox" id="tal-type-review" name="tal-type-review">
                     <label for="tal-type-review">Review</label>
                     <br>
+                    <label for="tal-type-review-number">Number of papers:</label>
+                    <input type="number" id="tal-type-review-number" name="tal-type-review-number">
+                    <br>
                     <input type="checkbox" id="tal-type-meta-analysis" name="tal-type-meta-analysis">
                     <label for="tal-type-meta-analysis">Meta Analysis</label>
+                    <br>
+                    <label for="tal-type-meta-analysis-number">Number of papers:</label>
+                    <input type="number" id="tal-type-meta-analysis-number" name="tal-type-meta-analysis-number">
                     <br>
                     <input type="checkbox" id="tal-type-editorial" name="tal-type-editorial">
                     <label for="tal-type-editorial">Editorial</label>
@@ -142,6 +148,7 @@
                 <br>
                 <label for="pop-physician-subspecialty-2">Physician Subspecialty II</label>
                 <select id="pop-physician-subspecialty-2" name="pop-physician-subspecialty-2">
+                    <option value="">(select if applicable)</option>
                     <optgroup label="General and Common">
                         <option value="100">Not Specified</option>
                         <option value="101">Mix of Specialties</option>
@@ -243,8 +250,11 @@
                 <h2>Sample Size</h2>
 
                 <form onsubmit="return formSubmit(event)">
-                    <label for="pop-sample-size">Sample Size (or 'NA')</label>
+                    <label for="pop-sample-size">Sample Size</label>
                     <input type="number" id="pop-sample-size" name="pop-sample-size">
+                    <label for="pop-sample-size-na"> or NA:</label>
+                    <input type="checkbox" id="pop-sample-size-na" name="pop-sample-size-na">
+                    <br>
                 </form>
                 
             </div>
@@ -327,6 +337,9 @@
 
                 <h2>Intervention</h2>
                 <form onsubmit="return formSubmit(event)">
+                    <input type="radio" id="int-none" name="int" value="" checked="checked">
+                    <label for="int-none">None</label>
+                    <br>
                     <input type="radio" id="int-discussed" name="int" value="1">
                     <label for="int-discussed">Discussed</label>
                     <br>
@@ -339,32 +352,36 @@
                 </form>
 
                 <!-- Seperate this out into a different form so we can toggle it easily -->
-                <form onsubmit="return formSubmit(event)">
-                    <label for="int-name-of-intervention">Name of Intervention</label>
-                    <input type="text" id="int-name-of-intervention" name="int-name-of-intervention">
-                    <br>
-                    <label for="int-brief-description">Brief Description</label>
-                    <input type="text" id="int-brief-description" name="int-brief-description">
-                </form>
-                <form onsubmit="return formSubmit(event)">
-                    <input type="checkbox" id="int-individual-based" name="int-individual-based">
-                    <label for="int-individual-based">Individual Based</label>
-                    <br>
-                    <input type="checkbox" id="int-team-based" name="int-team-based">
-                    <label for="int-team-based">Team Based</label>
-                    <br>
-                    <input type="checkbox" id="int-organizational-based" name="int-organizational-based">
-                    <label for="int-organizational-based">Organizational Based</label>
-                    <br>
-                    <input type="checkbox" id="int-education-based" name="int-education-based">
-                    <label for="int-education-based">Education Based</label>
-                    <br>
-                    <input type="checkbox" id="int-organizational-justice" name="int-organizational-justice">
-                    <label for="int-organizational-justice">Organizational Justice</label>
-                    <br>
-                    <label for="int-other">Other</label>
-                    <input type="text" id="int-other" name="int-other">
-                </form>
+                <div id="int-required">
+                    <form onsubmit="return formSubmit(event)">
+                        <label for="int-name-of-intervention">Name of Intervention</label>
+                        <input type="text" id="int-name-of-intervention" name="int-name-of-intervention">
+                        <br>
+                        <label for="int-brief-description">Brief Description</label>
+                        <input type="text" id="int-brief-description" name="int-brief-description">
+                    </form>
+                </div>
+                <div id="int-one-of">
+                    <form onsubmit="return formSubmit(event)">
+                        <input type="checkbox" id="int-individual-based" name="int-individual-based">
+                        <label for="int-individual-based">Individual Based</label>
+                        <br>
+                        <input type="checkbox" id="int-team-based" name="int-team-based">
+                        <label for="int-team-based">Team Based</label>
+                        <br>
+                        <input type="checkbox" id="int-organizational-based" name="int-organizational-based">
+                        <label for="int-organizational-based">Organizational Based</label>
+                        <br>
+                        <input type="checkbox" id="int-education-based" name="int-education-based">
+                        <label for="int-education-based">Education Based</label>
+                        <br>
+                        <input type="checkbox" id="int-organizational-justice" name="int-organizational-justice">
+                        <label for="int-organizational-justice">Organizational Justice</label>
+                        <br>
+                        <label for="int-other">Other</label>
+                        <input type="text" id="int-other" name="int-other">
+                    </form>
+                </div>
 
             </div>
             <div id="content-fac" class="content">

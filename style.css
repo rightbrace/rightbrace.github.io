@@ -60,6 +60,10 @@ html, body {
 }
 
 .tab {
+
+
+    user-select: none;
+    
     flex-grow: 1;
     border: 2px solid black;
     border-bottom-right-radius: 15px;
@@ -99,6 +103,7 @@ html, body {
     border: 1px solid black;
     border-radius: 5px;
 
+    user-select: none;
     font-size: larger;
 
     transition: background 0.2s;
