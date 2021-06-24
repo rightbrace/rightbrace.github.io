@@ -5,6 +5,14 @@ html, body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+table {
+    background: white;
+}
+
+td {
+    border: 1px solid black;
+}
+
 .infobox {
 
     padding: 10px;
