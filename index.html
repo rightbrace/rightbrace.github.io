@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Super Data Entry DX ~~ All-Stars Enhanced Edition with Platform-Exclusive Cross-Play&#8482; Technology</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="index.js"></script>
+    
+</head>
+<body>
+    
+    <h1>Super Data Entry&#8482; DX ~~ All-Stars Enhanced Edition UHD RERELEASE (1080p ultra-max)</h1>
+    
+    <div class="container">
+        <div id="tabbar">
+            
+            <div class="tab" onclick="switchToTab(event.srcElement);">Type and Location</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Exclude</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Population</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Stressors</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Consequences</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Intervention</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Factors</div>
+            <div class="tab" onclick="switchToTab(event.srcElement);">Metadata</div>
+            
+        </div>
+        <div id="content-item">
+            <div id="content-tal" class="active content">
+                
+                <h2>Type</h2>
+                
+                <form onsubmit="return formSubmit(event)">
+                    <input type="checkbox" id="tal-type-review" name="tal-type-review">
+                    <label for="tal-type-review">Review</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-meta-analysis" name="tal-type-meta-analysis">
+                    <label for="tal-type-meta-analysis">Meta Analysis</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-editorial" name="tal-type-editorial">
+                    <label for="tal-type-editorial">Editorial</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-letter-to-editor" name="tal-type-letter-to-editor">
+                    <label for="tal-type-letter-to-editor">Letter to Editor</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-quantatative" name="tal-type-quantatative">
+                    <label for="tal-type-quantatative">Quantatative</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-quantatative-rct" name="tal-type-quantatative-rct">
+                    <label for="tal-type-quantatative-rct">Quantatative - RTC</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-qualatative" name="tal-type-qualatative">
+                    <label for="tal-type-qualatative">Qualatative</label>
+                    <br>
+                    <input type="checkbox" id="tal-type-mixed-methods" name="tal-type-mixed-methods">
+                    <label for="tal-type-mixed-methods">Mixed Methods</label>
+                    <br>
+                    <label for="tal-type-other">Other:</label>
+                    <input type="text" id="tal-type-other" name="tal-type-other">
+                </form>
+                
+                
+                <h2>Location</h2>
+                <form onsubmit="return formSubmit(event)">
+                    
+                    <input type="checkbox" id="tal-location-north-america" name="tal-location-north-america">
+                    <label for="tal-location-north-america">North America</label>
+                    <br>
+                    <input type="checkbox" id="tal-location-south-central-america" name="tal-location-south-central-america">
+                    <label for="tal-location-south-central-america">South/Central America</label>
+                    <br>
+                    <input type="checkbox" id="tal-location-europe-russia" name="tal-location-europe-russia">
+                    <label for="tal-location-europe-russia">Europe or Russia</label>
+                    <br>
+                    <input type="checkbox" id="tal-location-asia" name="tal-location-asia">
+                    <label for="tal-location-asia">Asia</label>
+                    <br>
+                    <input type="checkbox" id="tal-location-africa" name="tal-location-africa">
+                    <label for="tal-location-africa">Africa</label>
+                    <br>
+                    <input type="checkbox" id="tal-location-middle-east-turkey" name="tal-location-middle-east-turkey">
+                    <label for="tal-location-middle-east-turkey">Middle East or Turkey</label>
+                    <br>
+                    <input type="checkbox" id="tal-location-australia-nz" name="tal-location-australia-nz">
+                    <label for="tal-location-australia-nz">Australia or New Zealand</label>
+                    <br>
+                    <label for="tal-location-other">Other: </label>
+                    <input type="text" id="tal-location-other" name="tal-location-other">
+                    
+                </form>
+                
+            </div>
+            <div id="content-exl" class="content">
+                
+                <h2>Exclude</h2>
+                
+                <form onsubmit="return formSubmit(event)">
+                    
+                    <input type="radio" id="exl-exclude-no" name="exl-exclude" value="">
+                    <label for="exl-exclude-no">No</label>
+                    <br>
+                    <input type="radio" id="exl-exclude-yes" name="exl-exclude" value="1">
+                    <label for="exl-exclude-yes">Yes</label>
+                    <br>
+                    <input type="radio" id="exl-exclude-uncertain" name="exl-exclude" value="2">
+                    <label for="exl-exclude-uncertain">Uncertain</label>
+                    <br>
+                    
+                    <br>
+                    <span class="form-details">Why?</span>
+                    <br>
+                    
+                    <input type="checkbox" id="exl-why-before-2000" name="exl-why-before-2000">
+                    <label for="exl-why-before-2000">Before 2000</label>
+                    <br>
+                    <input type="checkbox" id="exl-why-not-english" name="exl-why-not-english">
+                    <label for="exl-why-not-english">Not English</label>
+                    <br>
+                    <input type="checkbox" id="exl-why-not-hospital-based" name="exl-why-not-hospital-based">
+                    <label for="exl-why-not-hospital-based">Not Hospital Based</label>
+                    <br>
+                    <input type="checkbox" id="exl-why-conference-abstract" name="exl-why-conference-abstract">
+                    <label for="exl-why-conference-abstract">Conference Abstract</label>
+                    <br>
+                    <label for="exl-why-other">Other</label>
+                    <input type="text" id="exl-why-other" name="exl-why-other">
+                    <br>
+                    
+                    
+                </form>
+            </div>
+            <div id="content-pop" class="content">
+                
+                <h2>Population</h2>
+                
+                <form onsubmit="return formSubmit(event)">
+                <input type="checkbox" id="pop-physicians" name="pop-physicians">
+                <label for="pop-physicians">Physicians</label>
+                <br>
+                <label for="pop-physician-subspecialty">Subspecialty</label>
+                <input type="text" id="pop-physician-subspecialty" name="pop-physician-subspecialty">
+                <br>
+                <label for="pop-physician-subspecialty-2">Physician Subspecialty II</label>
+                <select id="pop-physician-subspecialty-2" name="pop-physician-subspecialty-2">
+                    <optgroup label="General and Common">
+                        <option value="100">Not Specified</option>
+                        <option value="101">Mix of Specialties</option>
+                    </optgroup>
+                    
+                    <optgroup label="Top Level Specialties (no/few major subspecialties)">
+                        
+                        <option value="200">Family Medicine/General Practice/ Primary Care</option>
+                        <option value="201">Emergency</option>
+                        <option value="202">Psychiatry</option>
+                        <option value="203">Anesthesiology</option>
+                        <option value="204">Neurology</option>
+                        <option value="205">Radiology</option>
+                        <option value="206">Pathology</option>
+                        <option value="207">Dermatology</option>
+                        <option value="208">Occupational Health</option>
+                        <option value="209">Mental Health</option>
+                        <option value="210">Pediatrics</option>
+                        <option value="211">Sports Medicine / Rehabilitation</option>
+                        <option value="212">Army</option>
+                    </optgroup>
+                    
+                    <optgroup label="Internal Medicine">
+                        <option value="300">Internal Medicine (mix, unspecified, or general)</option>
+                        <option value="301">Cardiology</option>
+                        <option value="302">ICU or Critical/Acute Care</option>
+                        <option value="303">Endocrinology</option>
+                        <option value="304">Gastroenterology</option>
+                        <option value="305">Oncology</option>
+                        <option value="306">Haematology</option>
+                        <option value="307">Infectious Disease (incl. HIV/AIDS)</option>
+                        <option value="308">Nephrology (incl. Hemodialysis) </option>
+                        <option value="309">Geriatrics</option>
+                        <option value="310">Pulmonary/Respirology</option>
+                        <option value="311">Rheumatology</option>
+                        <option value="312">Sleep</option>
+                        <option value="313">Immunology (incl. allergy)</option>
+                        <option value="314">Long Term Care</option>
+                    </optgroup>
+                    
+                    <optgroup label="Surgical Subspecialties">
+                        <option value="400">Surgery (mix, unspecified, general)</option>
+                        <option value="401">OBS/GYN</option>
+                        <option value="402">Plastics</option>
+                        <option value="403">Neurosurgery</option>
+                        <option value="404">Ophthalmology</option>
+                        <option value="405">Orthopaedic</option>
+                        <option value="406">Otolaryngology (ENT)</option>
+                        <option value="407">Cardiovascular / Thoracic</option>
+                        <option value="408">Surgical Oncology</option>
+                        <option value="409">Colorectal</option>
+                        <option value="410">Urology</option>
+                        <option value="411">Transplant (surgical)</option>
+                    </optgroup>
+                    
+                    <optgroup label="Leadership/Academic/Geographic">
+                        <option value="501">Academic</option>
+                        <option value="502">Residency Program Directors</option>
+                        <option value="503">Managers</option>
+                        <option value="504">Public Health</option>
+                        <option value="505">Rural Medicine</option>
+                    </optgroup>
+                    
+                    <optgroup label="Physician Adjacent">
+                        <option value="601">Podiatry</option>
+                        <option value="602">Dentistry</option>
+                        <option value="603">Optometry</option>
+                    </optgroup>
+                </select>
+                <br>
+                <input type="checkbox" id="pop-medical-students" name="pop-medical-students">
+                <label for="pop-medical-students">Medical Students</label>
+                <br>
+                <input type="checkbox" id="pop-nurses" name="pop-nurses">
+                <label for="pop-nurses">Nurses</label>
+                <br>
+                <label for="pop-nurse-subspecialty">Nurse Subspecialty</label>
+                <input type="text" id="pop-nurse-subspecialty" name="pop-nurse-subspecialty">
+                <br>
+                <input type="checkbox" id="pop-nursing-students" name="pop-nursing-students">
+                <label for="pop-nursing-students">Nursing Students</label>
+                <br>
+                <input type="checkbox" id="pop-resident" name="pop-resident">
+                <label for="pop-resident">Resident</label>
+                <br>
+                <label for="pop-resident-subspecialty">Resident Subspecialty</label>
+                <input type="text" id="pop-resident-subspecialty" name="pop-resident-subspecialty">
+                <br>
+                <input type="checkbox" id="pop-general-hospital-staff" name="pop-general-hospital-staff">
+                <label for="pop-general-hospital-staff">General Hospital Staff</label>
+                <br>
+                <input type="checkbox" id="pop-not-specified" name="pop-not-specified">
+                <label for="pop-not-specified">Not Specified</label>
+                <br>
+                <label for="pop-other">Other</label>
+                <input type="text" id="pop-other" name="pop-other">
+            </form>
+                
+                <h2>Sample Size</h2>
+
+                <form onsubmit="return formSubmit(event)">
+                    <label for="pop-sample-size">Sample Size (or 'NA')</label>
+                    <input type="number" id="pop-sample-size" name="pop-sample-size">
+                </form>
+                
+            </div>
+            <div id="content-str" class=" content">
+                
+                <h2>Stressors</h2>
+
+                <form onsubmit="return formSubmit(event)">
+                    <input type="checkbox" id="str-trauma" name="str-trauma">
+                    <label for="str-trauma">Trauma</label>
+                    <br>
+                    <input type="checkbox" id="str-extraordinary-event" name="str-extraordinary-event">
+                    <label for="str-extraordinary-event">Extraordinary Event</label>
+                    <br>
+                    <input type="checkbox" id="str-workplace-violence-physical" name="str-workplace-violence-physical">
+                    <label for="str-workplace-violence-physical">Workplace Violence - Physical</label>
+                    <br>
+                    <input type="checkbox" id="str-workplace-violence-verbal" name="str-workplace-violence-verbal">
+                    <label for="str-workplace-violence-verbal">Workplace Violence - Verbal</label>
+                    <br>
+                    <input type="checkbox" id="str-workplace-harassment" name="str-workplace-harassment">
+                    <label for="str-workplace-harassment">Workplace Harassment</label>
+                    <br>
+                    <label for="str-work-demands">Work Demands</label>
+                    <input type="text" id="str-work-demands" name="str-work-demands">
+                    <br>
+                    <label for="str-other">Other</label>
+                    <input type="text" id="str-other" name="str-other">
+                </form>
+
+            </div>
+            <div id="content-con" class="content">
+
+                <h2>Primary Consequences</h2>
+
+                <form onsubmit="return formSubmit(event)">
+                    <input type="checkbox" id="con-primary-burnout" name="con-primary-burnout">
+                    <label for="con-primary-burnout">Burnout</label>
+                    <br>
+                    <label for="con-primary-stress">Stress (provide detail)</label>
+                    <input type="text" id="con-primary-stress" name="con-primary-stress">
+                    <br>
+                    <input type="checkbox" id="con-primary-compassion-fatigue" name="con-primary-compassion-fatigue">
+                    <label for="con-primary-compassion-fatigue">Compassion Fatigue</label>
+                    <br>
+                    <input type="checkbox" id="con-primary-moral-distress" name="con-primary-moral-distress">
+                    <label for="con-primary-moral-distress">Moral Distress</label>
+                </form>
+
+                <h2>Secondary Consequences</h2>
+
+                <form onsubmit="return formSubmit(event)">
+                    <input type="checkbox" id="con-secondary-substance-use" name="con-secondary-substance-use">
+                    <label for="con-secondary-substance-use">Substance Use</label>
+                    <br>
+                    <input type="checkbox" id="con-secondary-suicide" name="con-secondary-suicide">
+                    <label for="con-secondary-suicide">Suicide</label>
+                    <br>
+                    <input type="checkbox" id="con-secondary-job-satisfaction" name="con-secondary-job-satisfaction">
+                    <label for="con-secondary-job-satisfaction">Job Satisfaction</label>
+                    <br>
+                    <input type="checkbox" id="con-secondary-quality-of-life" name="con-secondary-quality-of-life">
+                    <label for="con-secondary-quality-of-life">Quality of Life</label>
+                    <br>
+                    <input type="checkbox" id="con-secondary-psychological-symptoms" name="con-secondary-psychological-symptoms">
+                    <label for="con-secondary-psychological-symptoms">Psychological Symptoms</label>
+                    <br>
+                    <input type="checkbox" id="con-secondary-retention" name="con-secondary-retention">
+                    <label for="con-secondary-retention">Retention</label>
+                    <br>
+                    <input type="checkbox" id="con-secondary-resilience" name="con-secondary-resilience">
+                    <label for="con-secondary-resilience">Resilience</label>
+                    <br>
+                    <label for="con-secondary-other">Other</label>
+                    <input type="text" id="con-secondary-other" name="con-secondary-other">
+                </form>
+
+            </div>
+            <div id="content-int" class="content">
+
+                <h2>Intervention</h2>
+                <form onsubmit="return formSubmit(event)">
+                    <input type="radio" id="int-discussed" name="int" value="1">
+                    <label for="int-discussed">Discussed</label>
+                    <br>
+                    <input type="radio" id="int-implemented" name="int" value="2">
+                    <label for="int-implemented">Implemented</label>
+                    <br>
+                    <input type="radio" id="int-examined" name="int" value="3">
+                    <label for="int-examined">Examined</label>
+                    <br>
+                </form>
+
+                <!-- Seperate this out into a different form so we can toggle it easily -->
+                <form onsubmit="return formSubmit(event)">
+                    <label for="int-name-of-intervention">Name of Intervention</label>
+                    <input type="text" id="int-name-of-intervention" name="int-name-of-intervention">
+                    <br>
+                    <label for="int-brief-description">Brief Description</label>
+                    <input type="text" id="int-brief-description" name="int-brief-description">
+                </form>
+                <form onsubmit="return formSubmit(event)">
+                    <input type="checkbox" id="int-individual-based" name="int-individual-based">
+                    <label for="int-individual-based">Individual Based</label>
+                    <br>
+                    <input type="checkbox" id="int-team-based" name="int-team-based">
+                    <label for="int-team-based">Team Based</label>
+                    <br>
+                    <input type="checkbox" id="int-organizational-based" name="int-organizational-based">
+                    <label for="int-organizational-based">Organizational Based</label>
+                    <br>
+                    <input type="checkbox" id="int-education-based" name="int-education-based">
+                    <label for="int-education-based">Education Based</label>
+                    <br>
+                    <input type="checkbox" id="int-organizational-justice" name="int-organizational-justice">
+                    <label for="int-organizational-justice">Organizational Justice</label>
+                    <br>
+                    <label for="int-other">Other</label>
+                    <input type="text" id="int-other" name="int-other">
+                </form>
+
+            </div>
+            <div id="content-fac" class="content">
+                
+                <h2>Factors</h2>
+                <form onsubmit="return formSubmit(event)">
+                    <input type="checkbox" id="fac-personality-psychological" name="fac-personality-psychological">
+                    <label for="fac-personality-psychological">Personality/Psychological</label>
+                    <br>
+                    <input type="checkbox" id="fac-individual" name="fac-individual">
+                    <label for="fac-individual">Individual</label>
+                    <br>
+                    <input type="checkbox" id="fac-organizational" name="fac-organizational">
+                    <label for="fac-organizational">Organizational</label>
+                    <br>
+                    <input type="checkbox" id="fac-social" name="fac-social">
+                    <label for="fac-social">Social</label>
+                    <br>
+                    <label for="fac-other">Other</label>
+                    <input type="text" id="fac-other" name="fac-other">
+                </form>
+
+            </div>
+            <div id="content-mta" class="content">
+                
+                <h2>Notes</h2>
+                <form onsubmit="return formSubmit(event)">
+                    <label for="mta-notes">Notes:</label>
+                    <input type="text" id="mta-notes" name="mta-notes">
+                </form>
+
+                <h2>Signing</h2>
+                <form onsubmit="return formSubmit(event)">
+                    <label for="mta-date">Date:</label>
+                    <input type="date" id="mta-date">
+                    <br>
+                    <label for="mta-name-of-extractor">Name:</label>
+                    <input type="text" id="mta-name-of-extractor" name="mta-name-of-extractor">
+                </form>
+
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="reset">
+        <div class="button" onclick="generateOutput()">
+            Generate Row
+        </div>
+        <div class="button" onclick="clearInput()">
+            Clear Data
+        </div>
+    </div>
+</body>
+</html>
