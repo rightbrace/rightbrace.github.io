@@ -55,6 +55,19 @@ function switchToTab(tab) {
 
 }
 
+function validateAll() {
+    let validationFunctions = {
+        "tal": [validateType, validateLocation],
+        "exl": [validateExclude],
+        "pop": [validatePopulation, validateSampleSize],
+        "str": [validateStressors],
+        "con": [validatePrimaryConsequences, validateSecondaryConsequences],
+        "int": [validateIntervention],
+        "fac": [validateFactors],
+        "mta": [validateMetadata]
+    }
+}
+
 function generateOutput() {
     alert("Unimplemented");
 }
