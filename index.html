@@ -28,9 +28,9 @@
         <div id="content-item">
             <div id="content-tal" class="active content">
                 
-                <h2>Type</h2>
+                <h2 id="tal-type-header">Type</h2>
                 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="checkbox" id="tal-type-review" name="tal-type-review">
                     <label for="tal-type-review">Review</label>
                     <br>
@@ -66,8 +66,8 @@
                 </form>
                 
                 
-                <h2>Location</h2>
-                <form onsubmit="return formSubmit(event)">
+                <h2 id="tal-location-header">Location</h2>
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     
                     <input type="checkbox" id="tal-location-north-america" name="tal-location-north-america">
                     <label for="tal-location-north-america">North America</label>
@@ -98,9 +98,9 @@
             </div>
             <div id="content-exl" class="content">
                 
-                <h2>Exclude</h2>
+                <h2 id="exl-header">Exclude</h2>
                 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     
                     <input type="radio" id="exl-exclude-no" name="exl-exclude" value="">
                     <label for="exl-exclude-no">No</label>
@@ -137,9 +137,9 @@
             </div>
             <div id="content-pop" class="content">
                 
-                <h2>Population</h2>
+                <h2 id="pop-header">Population</h2>
                 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                 <input type="checkbox" id="pop-physicians" name="pop-physicians">
                 <label for="pop-physicians">Physicians</label>
                 <br>
@@ -249,7 +249,7 @@
                 
                 <h2>Sample Size</h2>
 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <label for="pop-sample-size">Sample Size</label>
                     <input type="number" id="pop-sample-size" name="pop-sample-size">
                     <label for="pop-sample-size-na"> or NA:</label>
@@ -262,7 +262,7 @@
                 
                 <h2>Stressors</h2>
 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="checkbox" id="str-trauma" name="str-trauma">
                     <label for="str-trauma">Trauma</label>
                     <br>
@@ -290,7 +290,7 @@
 
                 <h2>Primary Consequences</h2>
 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="checkbox" id="con-primary-burnout" name="con-primary-burnout">
                     <label for="con-primary-burnout">Burnout</label>
                     <br>
@@ -306,7 +306,7 @@
 
                 <h2>Secondary Consequences</h2>
 
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="checkbox" id="con-secondary-substance-use" name="con-secondary-substance-use">
                     <label for="con-secondary-substance-use">Substance Use</label>
                     <br>
@@ -336,7 +336,7 @@
             <div id="content-int" class="content">
 
                 <h2>Intervention</h2>
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="radio" id="int-none" name="int" value="" checked="checked">
                     <label for="int-none">None</label>
                     <br>
@@ -353,7 +353,7 @@
 
                 <!-- Seperate this out into a different form so we can toggle it easily -->
                 <div id="int-required">
-                    <form onsubmit="return formSubmit(event)">
+                    <form onchange="formChange()" onsubmit="return formSubmit(event)">
                         <label for="int-name-of-intervention">Name of Intervention</label>
                         <input type="text" id="int-name-of-intervention" name="int-name-of-intervention">
                         <br>
@@ -362,7 +362,7 @@
                     </form>
                 </div>
                 <div id="int-one-of">
-                    <form onsubmit="return formSubmit(event)">
+                    <form onchange="formChange()" onsubmit="return formSubmit(event)">
                         <input type="checkbox" id="int-individual-based" name="int-individual-based">
                         <label for="int-individual-based">Individual Based</label>
                         <br>
@@ -387,7 +387,7 @@
             <div id="content-fac" class="content">
                 
                 <h2>Factors</h2>
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="checkbox" id="fac-personality-psychological" name="fac-personality-psychological">
                     <label for="fac-personality-psychological">Personality/Psychological</label>
                     <br>
@@ -408,13 +408,13 @@
             <div id="content-mta" class="content">
                 
                 <h2>Notes</h2>
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <label for="mta-notes">Notes:</label>
                     <input type="text" id="mta-notes" name="mta-notes">
                 </form>
 
                 <h2>Signing</h2>
-                <form onsubmit="return formSubmit(event)">
+                <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <label for="mta-date">Date:</label>
                     <input type="date" id="mta-date">
                     <br>

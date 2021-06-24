@@ -63,7 +63,7 @@ html, body {
 
 
     user-select: none;
-    
+
     flex-grow: 1;
     border: 2px solid black;
     border-bottom-right-radius: 15px;
@@ -83,12 +83,24 @@ html, body {
 
 }
 
+.tab.selected {
+    width: 110%;
+}
+
+.tab.unvisited {
+    background-color: #cfbb04;
+}
+
+.tab.error {
+    background-color: #e25633;
+}
+
 .tab:hover {
     width: 110%;
 }
 
-.unvisited {
-    background: #cfbb04;
+.error-message {
+    color: #8a130f;
 }
 
 #reset {

@@ -20,6 +20,10 @@ function formSubmit(e) {
     return false;
 }
 
+function formChange() {
+    validateAll();
+}
+
 function switchToFirstTab() {
     let firstTab = document.querySelector(".tab");
     switchToTab(firstTab);
@@ -31,6 +35,9 @@ function switchToTab(tab) {
     let list = tab.parentElement.querySelectorAll(".tab");
     // Ahahahaaha I hate javascript
     let idx = Array.prototype.indexOf.call(list, tab);
+    // Mark all tabs as unselected
+    list.forEach(tab => tab.classList.remove("selected"));
+    tab.classList.add("selected");
 
     // Get all the panels
     let panels = document.querySelectorAll(".content");
@@ -52,10 +59,14 @@ function switchToTab(tab) {
     visitedTabs.forEach(tab => tab.classList.remove("unvisited"));
 
 
+    // Revalidate
+    validateAll();
 
 }
 
 function validateAll() {
+
+    // Associate all functions with their prefix
     let validationFunctions = {
         "tal": [validateType, validateLocation],
         "exl": [validateExclude],
@@ -66,6 +77,41 @@ function validateAll() {
         "fac": [validateFactors],
         "mta": [validateMetadata]
     }
+
+    // Clear all tab error indicators
+    let tabs = document.querySelectorAll(".tab");
+    tabs.forEach(tab => tab.classList.remove("error"));
+
+    // Remove all existing error messages
+    document.querySelectorAll(".error-message").forEach(e => e.remove());
+
+    let anyErrors = false;
+
+    // For every category
+    for (suffix in validationFunctions) {
+        // Run every function
+        let list = validationFunctions[suffix];
+        list.forEach(func => {
+            let errors = func();
+            if (errors.length > 0) {
+                // If there were errors, mark that tab
+                byId("tab-" + suffix).classList.add("error");
+                // Fail the whole test
+                anyErrors = true;
+
+                // Now, sprinkle error messages around
+                errors.forEach(error => {
+                    let msg = document.createElement("span");
+                    msg.classList.add("error-message");
+                    msg.innerText = error.message;
+                    let problem = byId(error.id);
+                    problem.parentNode.insertBefore(msg, problem.nextSibling);
+                })
+            }
+        })
+    }
+
+    return !anyErrors;
 }
 
 function generateOutput() {
@@ -146,7 +192,7 @@ function validateType() {
     let oneOf = ["tal-type-review", "tal-type-meta-analysis", "tal-type-editorial", "tal-type-letter-to-editor", "tal-type-quantatative", "tal-type-quantatative-rct", "tal-type-qualatative", "tal-type-mixed-methods", "tal-type-other"];
 
     if (!oneOf.some(filled)) {
-        errors.push({id: "content-tal", message: "Must select at least one paper type"})
+        errors.push({id: "tal-type-header", message: "Must select at least one paper type"})
     }
 
     // If its -review or -meta-analysis, make sure the subquestion is answered
@@ -169,7 +215,7 @@ function validateLocation() {
     let oneOf = ["tal-location-north-america", "tal-location-south-central-america", "tal-location-europe-russia", "tal-location-asia", "tal-location-africa", "tal-location-middle-east-turkey", "tal-location-australia-nz", "tal-location-other"];
 
     if (!oneOf.some(filled)) {
-        errors.push({id: "content-tal", message: "Must select at least one location"})
+        errors.push({id: "tal-location-header", message: "Must select at least one location"})
     }
 
     return errors;
@@ -198,7 +244,7 @@ function validateExclude() {
 
         let oneOf = ["exl-why-before-2000", "exl-why-not-english", "exl-why-not-hospital-based", "exl-why-conference-abstract", "exl-why-other"];
         if (!oneOf.some(filled)) {
-            errors.push({id: "content-exl", message: "Must provide at least one reason."});
+            errors.push({id: "exl-header", message: "Must provide at least one reason."});
         }
 
     }
@@ -214,7 +260,7 @@ function validatePopulation() {
     let oneOf = ["pop-physicians", "pop-medical-students", "pop-nurses", "pop-nursing-students", "pop-resident", "pop-general-hospital-staff", "pop-not-specified", "pop-other"];
 
     if (!oneOf.some(filled)) {
-        errors.push({id: "content-pop", message: "Must provide at least one population type."});
+        errors.push({id: "pop-header", message: "Must provide at least one population type."});
     }
 
     // Check the simple subspecialties
