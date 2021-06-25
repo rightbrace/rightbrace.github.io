@@ -5,12 +5,7 @@ function validateType() {
     // Make sure at least one is answered
     let oneOf = ["tal-type-review", "tal-type-meta-analysis", "tal-type-editorial", "tal-type-letter-to-editor", "tal-type-quantitative", "tal-type-quantitative-rct", "tal-type-qualitative", "tal-type-mixed-methods", "tal-type-other"];
 
-    if (!oneOf.some(id => {
-        if (byId(id) == null) {
-            console.log("Error on: " + id);
-        }
-        return filled(id);
-    })) {
+    if (!oneOf.some(filled)) {
         errors.push({id: "tal-type-header", message: "Must select at least one paper type"})
     }
 
