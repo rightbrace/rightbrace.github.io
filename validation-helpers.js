@@ -2,7 +2,7 @@ function filled(id) {
     let elem = document.getElementById(id);
 
     if (elem.nodeName != "INPUT") {
-        console.error("Cannot call filled on a non <input> element");
+        console.error("Cannot call filled on a non <input> element: " + id);
     }
 
     if (elem.type == "checkbox") {

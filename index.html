@@ -9,6 +9,7 @@
     <script src="validation-helpers.js"></script>
     <script src="validation-logic.js"></script>
     <script src="output.js"></script>
+    <script src="done-list.js"></script>
     
 </head>
 <body>
@@ -428,16 +429,21 @@
         </div>
 
         <div id="right-bar">
-            This tool is MIT licensed and comes without warranty. See LICENSE in <a href="https://github.com/rightbrace/rightbrace.github.io">https://github.com/rightbrace/rightbrace.github.io</a>.
+            <h3 id="done-list-header">Completed Items</h3>
+            <div id="done-list">
+
+            </div>
+
             <div id="reset">
                 <div class="big button" onclick="generateOutput()">
                     Generate Row
                 </div>
-                <br>
-                <div class="big button" onclick="clearInput()">
+                <div class="big warning button" onclick="clearInput()">
                     Clear Data
                 </div>
-            </div>
+                <br>
+                This tool is MIT licensed and comes without warranty. See LICENSE in <a href="https://github.com/rightbrace/rightbrace.github.io">https://github.com/rightbrace/rightbrace.github.io</a>.            </div>
+
         </div>
     </div>
     

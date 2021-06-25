@@ -2,6 +2,7 @@ let visitedTabs = [];
 
 window.onload = function() {
     switchToFirstTab();
+    listCompleted();
 
     // If the user has entered any data, prompt them that it won't be saved
     // Taken from https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload
@@ -22,6 +23,7 @@ function formSubmit(e) {
 
 function formChange() {
     validateAll();
+    listCompleted();
 }
 
 function switchToFirstTab() {
@@ -62,6 +64,12 @@ function switchToTab(tab) {
     // Revalidate
     validateAll();
 
+}
+
+function listCompleted() {
+    let listPanel = byId("done-list");
+    listPanel.innerHTML = "";
+    listPanel.appendChild(generateCompletedInputHTML());
 }
 
 function validateAll() {
