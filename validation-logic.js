@@ -62,8 +62,12 @@ function validateExclude() {
 
     }
 
-    // TODO - if something was selected, make sure that the option is set to No
-
+    // If a reason is selected, make sure No isn't ticked
+    let oneOf = ["exl-why-before-2000", "exl-why-not-english", "exl-why-not-hospital-based", "exl-why-conference-abstract", "exl-why-other"];
+    if (oneOf.some(filled) && checked != "1" && checked != "2") {
+        errors.push({id: "exl-header", message: "Cannot select a reason without excluding."});
+    }
+    
     return errors;
 }
 
@@ -153,9 +157,13 @@ function validateIntervention() {
 
     }
 
-    return errors;
+    // Check if they fill out fields without checking any of the buttons.
+    let oneOf = ["int-name-of-intervention", "int-brief-description", "int-individual-based", "int-team-based", "int-organizational-based", "int-education-based", "int-organizational-justice", "int-other"];
+    if (oneOf.some(filled) && checked == 0) {
+        errors.push({id: "int-header", message: "Cannot specify details without specifying a level of intervention."});
+    }
 
-    
+    return errors;
 }
 
 function validateFactors() {
