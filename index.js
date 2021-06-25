@@ -148,23 +148,30 @@ function generateOutput() {
     table.appendChild(row);
 
     let btnTd = document.createElement("td");
+    btnTd.style.width = "0.1%";
+    btnTd.style.whiteSpace = "nowrap";
     row.appendChild(btnTd);
 
-    let btn = document.createElement("div");
-    btn.innerText = "Delete Row";
-    btn.classList.add("button");
-    btn.onclick = () => {
-        table.removeChild(row);
-    }
-    btnTd.appendChild(btn);
+    let textField = document.createElement("input");
+    textField.type = "text";
+    textField.placeholder = "Ephemeral Notes (Ignored)";
+    btnTd.appendChild(textField);
 
-    btn = document.createElement("div");
+    let btn = document.createElement("div");
     btn.innerText = "Copy Row";
     btn.classList.add("button");
     btn.onclick = () => {
         let cols = Array.from(row.children).slice(1);
         let cpy = cols.map(elem => elem.innerText).join("\t");
         navigator.clipboard.writeText(cpy);
+    }
+    btnTd.appendChild(btn);
+
+    btn = document.createElement("div");
+    btn.innerText = "Delete Row";
+    btn.classList.add("warning", "button");
+    btn.onclick = () => {
+        table.removeChild(row);
     }
     btnTd.appendChild(btn);
 
