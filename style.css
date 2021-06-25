@@ -16,6 +16,9 @@ table {
     background: rgb(92, 92, 92);
     width: 100%;
     border-collapse:collapse;
+
+    font-family: Calibri, sans-serif;
+    font-size: 11pt;
 }
 
 td {
