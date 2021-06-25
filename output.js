@@ -46,9 +46,12 @@ class RowBuilder {
     }
 
     date(id) {
-        let date = byId(id).valueAsDate;
-        let names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        this._push(`${date.getDate()}/${names[date.getMonth()]}/${date.getFullYear().toString().substr(2)}`)
+        let date = byId(id).value.split("-");
+        let year = date[0].substr(2);
+        let monthNum = parseInt(date[1]);
+        let day = date[2];
+        let names = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        this._push(`${day}/${names[monthNum]}/${year}`)
         return this;
     }
 
@@ -103,9 +106,9 @@ function generateRow() {
         .end()
     .bool("tal-type-editorial")
     .bool("tal-type-letter-to-editor")
-    .bool("tal-type-quantatative")
-    .bool("tal-type-quantatative-rct")
-    .bool("tal-type-qualatative")
+    .bool("tal-type-quantitative")
+    .bool("tal-type-quantitative-rct")
+    .bool("tal-type-qualitative")
     .bool("tal-type-mixed-methods")
     .text("tal-type-other")
 

@@ -135,7 +135,7 @@ function generateOutput() {
 
     let columns = generateRow();
 
-    let table = document.createElement("table");
+    let table = document.getElementById("output-table");
     let row = document.createElement("tr");
     table.appendChild(row);
 
@@ -156,7 +156,6 @@ function generateOutput() {
         row.appendChild(td);
     });
 
-    byId("output").appendChild(table);
 }
 
 function clearInput() {

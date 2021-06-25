@@ -3,7 +3,7 @@ function validateType() {
     let errors = [];
 
     // Make sure at least one is answered
-    let oneOf = ["tal-type-review", "tal-type-meta-analysis", "tal-type-editorial", "tal-type-letter-to-editor", "tal-type-quantatative", "tal-type-quantatative-rct", "tal-type-qualatative", "tal-type-mixed-methods", "tal-type-other"];
+    let oneOf = ["tal-type-review", "tal-type-meta-analysis", "tal-type-editorial", "tal-type-letter-to-editor", "tal-type-quantitative", "tal-type-quantitative-rct", "tal-type-qualitative", "tal-type-mixed-methods", "tal-type-other"];
 
     if (!oneOf.some(filled)) {
         errors.push({id: "tal-type-header", message: "Must select at least one paper type"})
@@ -127,7 +127,6 @@ function validateSecondaryConsequences() {
 }
 
 function validateIntervention() {
-    // TODO
 
     let errors = [];
 
@@ -149,7 +148,7 @@ function validateIntervention() {
         // The rest must be at least one
         let oneOf = ["int-individual-based", "int-team-based", "int-organizational-based", "int-education-based", "int-organizational-justice", "int-other"];
         if (!oneOf.some(filled)) {
-            errors.push({id: "int-one-of", message: "Must provide at least one reason."});
+            errors.push({id: "int-one-of", message: "Must provide at least one category."});
         }
 
     }

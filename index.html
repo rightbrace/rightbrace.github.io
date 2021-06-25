@@ -50,14 +50,14 @@
                     <input type="checkbox" id="tal-type-letter-to-editor" name="tal-type-letter-to-editor">
                     <label for="tal-type-letter-to-editor">Letter to Editor</label>
                     <br>
-                    <input type="checkbox" id="tal-type-quantatative" name="tal-type-quantatative">
-                    <label for="tal-type-quantatative">Quantatative</label>
+                    <input type="checkbox" id="tal-type-quantitative" name="tal-type-quantitative">
+                    <label for="tal-type-quantitative">Quantitative</label>
                     <br>
-                    <input type="checkbox" id="tal-type-quantatative-rct" name="tal-type-quantatative-rct">
-                    <label for="tal-type-quantatative-rct">Quantatative - RTC</label>
+                    <input type="checkbox" id="tal-type-quantitative-rct" name="tal-type-quantitative-rct">
+                    <label for="tal-type-quantitative-rct">Quantitative - RTC</label>
                     <br>
-                    <input type="checkbox" id="tal-type-qualatative" name="tal-type-qualatative">
-                    <label for="tal-type-qualatative">Qualatative</label>
+                    <input type="checkbox" id="tal-type-qualitative" name="tal-type-qualitative">
+                    <label for="tal-type-qualitative">Qualitative</label>
                     <br>
                     <input type="checkbox" id="tal-type-mixed-methods" name="tal-type-mixed-methods">
                     <label for="tal-type-mixed-methods">Mixed Methods</label>
@@ -103,7 +103,7 @@
                 
                 <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     
-                    <input type="radio" id="exl-exclude-no" name="exl-exclude" value="">
+                    <input type="radio" id="exl-exclude-no" name="exl-exclude" value="" checked="checked">
                     <label for="exl-exclude-no">No</label>
                     <br>
                     <input type="radio" id="exl-exclude-yes" name="exl-exclude" value="1">
@@ -130,7 +130,7 @@
                     <label for="exl-why-conference-abstract">Conference Abstract</label>
                     <br>
                     <label for="exl-why-other">Other</label>
-                    <input type="text" id="exl-why-other" name="exl-why-other">
+                    <input type="text" id="exl-why-other" name="exl-why-other" size="50">
                     <br>
                     
                     
@@ -359,7 +359,7 @@
                         <input type="text" id="int-name-of-intervention" name="int-name-of-intervention">
                         <br>
                         <label for="int-brief-description">Brief Description</label>
-                        <input type="text" id="int-brief-description" name="int-brief-description">
+                        <input type="text" id="int-brief-description" name="int-brief-description" size="50">
                     </form>
                 </div>
                 <div id="int-one-of">
@@ -411,7 +411,7 @@
                 <h2>Notes</h2>
                 <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <label for="mta-notes">Notes:</label>
-                    <input type="text" id="mta-notes" name="mta-notes">
+                    <input type="text" id="mta-notes" name="mta-notes" size="50">
                 </form>
 
                 <h2>Signing</h2>
@@ -445,6 +445,23 @@
     <div id="output">
         <h2>Output</h2>
 
+        <table id="output-table">
+            <tr>
+                <td colspan="1"></td>
+                <td colspan="11">Type</td>
+                <td colspan="12">Population</td>
+                <td colspan="6">Exclude</td>
+                <td colspan="1">Sample Size</td>
+                <td colspan="9">Location</td>
+                <td colspan="9">Stressors</td>
+                <td colspan="5">Primary Consequences</td>
+                <td colspan="8">Secondary Consequences</td>
+                <td colspan="9">Intervention</td>
+                <td colspan="5">Factors</td>
+                <td colspan="1">Notes</td>
+                <td colspan="2">Signing</td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
