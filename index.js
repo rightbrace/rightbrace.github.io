@@ -150,6 +150,16 @@ function generateOutput() {
     }
     btnTd.appendChild(btn);
 
+    btn = document.createElement("div");
+    btn.innerText = "Copy Row";
+    btn.classList.add("button");
+    btn.onclick = () => {
+        let cols = Array.from(row.children).slice(1);
+        let cpy = cols.map(elem => elem.innerText).join("\t");
+        navigator.clipboard.writeText(cpy);
+    }
+    btnTd.appendChild(btn);
+
     columns.forEach(column => {
         let td = document.createElement("td");
         td.innerText = column;
