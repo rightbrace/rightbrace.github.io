@@ -181,6 +181,7 @@ function clearInput() {
         document.querySelectorAll("form").forEach(form => form.reset());
         visitedTabs = [];
         switchToFirstTab();
+        listCompleted();
     }
 }
 

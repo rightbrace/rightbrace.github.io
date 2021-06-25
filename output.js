@@ -113,10 +113,19 @@ function generateRow() {
     .text("tal-type-other")
 
     // Population data
-    .if("pop-physicians")
-        .text("pop-physician-subspecialty")
-        .dropdown("pop-physician-subspecialty-2")
-        .end()
+    .custom(row => {
+        if (filled("pop-physicians")) {
+            row.bool("pop-physicians")
+               .text("pop-physician-subspecialty")
+               .dropdown("pop-physician-subspecialty-2");
+            if (filled("pop-physician-pediatrics")) {
+                // Careful, this only works since we aren't in an if
+                row.cols[row.cols.length - 1] += "-P";
+            }
+        } else {
+            row.blank(3);
+        }
+    })
     .bool("pop-medical-students")
     .if("pop-nurses")
         .text("pop-nurse-subspecialty")

@@ -35,16 +35,16 @@
                 <form onchange="formChange()" onsubmit="return formSubmit(event)">
                     <input type="checkbox" id="tal-type-review" name="tal-type-review">
                     <label for="tal-type-review">Review</label>
-                    <br>
+                    <div class="indent">
                     <label for="tal-type-review-number">Number of papers:</label>
                     <input type="number" id="tal-type-review-number" name="tal-type-review-number">
-                    <br>
+            </div>
                     <input type="checkbox" id="tal-type-meta-analysis" name="tal-type-meta-analysis">
                     <label for="tal-type-meta-analysis">Meta Analysis</label>
-                    <br>
+                    <div class="indent">
                     <label for="tal-type-meta-analysis-number">Number of papers:</label>
                     <input type="number" id="tal-type-meta-analysis-number" name="tal-type-meta-analysis-number">
-                    <br>
+                </div>
                     <input type="checkbox" id="tal-type-editorial" name="tal-type-editorial">
                     <label for="tal-type-editorial">Editorial</label>
                     <br>
@@ -144,7 +144,7 @@
                 <form onchange="formChange()" onsubmit="return formSubmit(event)">
                 <input type="checkbox" id="pop-physicians" name="pop-physicians">
                 <label for="pop-physicians">Physicians</label>
-                <br>
+                <div class="indent">
                 <label for="pop-physician-subspecialty">Subspecialty</label>
                 <input type="text" id="pop-physician-subspecialty" name="pop-physician-subspecialty">
                 <br>
@@ -221,24 +221,28 @@
                     </optgroup>
                 </select>
                 <br>
+                <input type="checkbox" id="pop-physician-pediatrics" name="pop-physician-pediatrics">
+                <label for="pop-physician-pediatrics">Pediatrics</label>
+            </div>
                 <input type="checkbox" id="pop-medical-students" name="pop-medical-students">
                 <label for="pop-medical-students">Medical Students</label>
                 <br>
                 <input type="checkbox" id="pop-nurses" name="pop-nurses">
                 <label for="pop-nurses">Nurses</label>
-                <br>
+                <div class="indent">
                 <label for="pop-nurse-subspecialty">Nurse Subspecialty</label>
                 <input type="text" id="pop-nurse-subspecialty" name="pop-nurse-subspecialty">
-                <br>
+            </div>
                 <input type="checkbox" id="pop-nursing-students" name="pop-nursing-students">
                 <label for="pop-nursing-students">Nursing Students</label>
                 <br>
                 <input type="checkbox" id="pop-resident" name="pop-resident">
                 <label for="pop-resident">Resident</label>
                 <br>
+                <div class="indent">
                 <label for="pop-resident-subspecialty">Resident Subspecialty</label>
                 <input type="text" id="pop-resident-subspecialty" name="pop-resident-subspecialty">
-                <br>
+            </div>
                 <input type="checkbox" id="pop-general-hospital-staff" name="pop-general-hospital-staff">
                 <label for="pop-general-hospital-staff">General Hospital Staff</label>
                 <br>
@@ -353,6 +357,7 @@
                     <br>
                 </form>
 
+                <div class="indent">
                 <!-- Seperate this out into a different form so we can toggle it easily -->
                 <div id="int-required">
                     <form onchange="formChange()" onsubmit="return formSubmit(event)">
@@ -384,6 +389,7 @@
                         <input type="text" id="int-other" name="int-other">
                     </form>
                 </div>
+            </div>
 
             </div>
             <div id="content-fac" class="content">
@@ -439,7 +445,7 @@
                     Generate Row
                 </div>
                 <div class="big warning button" onclick="clearInput()">
-                    Clear Data
+                    Clear Input
                 </div>
                 <br>
                 This tool is MIT licensed and comes without warranty. See LICENSE in <a href="https://github.com/rightbrace/rightbrace.github.io">https://github.com/rightbrace/rightbrace.github.io</a>.            </div>

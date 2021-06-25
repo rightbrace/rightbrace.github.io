@@ -94,7 +94,11 @@ function validatePopulation() {
     }
 
     if (!filled("pop-physicians") && byId("pop-physician-subspecialty-2").value != "") {
-        errors.push({id: "pop-physicians-subspecialty", message: "You provided a second subspecialty without ticking this."})
+        errors.push({id: "pop-physicians", message: "You provided a second subspecialty without ticking this."})
+    }
+
+    if (filled("pop-physician-pediatrics") && !filled("pop-physicians")) {
+        errors.push({id: "pop-physicians", message: "You ticked pediatrics but not this."})
     }
 
     return errors;
