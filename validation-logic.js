@@ -90,7 +90,7 @@ function validatePopulation() {
     // If physician is ticked, both children must be filled, however the dropdown is "Not specified" by default
     validateSpicyBoolean("pop-physicians", "pop-physician-subspecialty", errors);
     if (filled("pop-physicians") && byId("pop-physician-subspecialty-2").value == "") {
-        errors.push({id: "pop-physicians-subspecialty-2", message: "You must provide a second subspecialty or 'Not Specified.'"})
+        errors.push({id: "pop-physician-subspecialty-2", message: "You must provide a second subspecialty or 'Not Specified.'"})
     }
 
     if (!filled("pop-physicians") && byId("pop-physician-subspecialty-2").value != "") {
