@@ -63,7 +63,6 @@ function switchToTab(tab) {
 
     // Revalidate
     validateAll();
-
 }
 
 function listCompleted() {
