@@ -102,7 +102,7 @@ function generateRow() {
         .num("tal-type-review-number")
         .end()
     .if("tal-type-meta-analysis")
-        .num("tal-type-review-number")
+        .num("tal-type-meta-analysis-number")
         .end()
     .bool("tal-type-editorial")
     .bool("tal-type-letter-to-editor")
