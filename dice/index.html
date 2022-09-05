@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
+        <script src="index.js"></script>
+        <style>
+            #output {
+                width: 500px;
+                height: 500px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="input">
+            <input id="inputField" value="2d20 + 2d10 v 10d4">
+            <button onclick="submit()">Submit</button>
+        </div>
+        <div id="output"></div>
+    </body>
+</html>
