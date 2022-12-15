@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="main.js"></script>
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #explainer {
+            width: 40ch;
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-height: 90vh;
+            background-color: antiquewhite;
+            padding: 10px;
+            margin: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+            overflow-y: scroll;
+        }
+
+        .euler {
+            color: red;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .adaptive-euler {
+            color: blue;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .verlet {
+            color: green;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .rk4 {
+            color: orange;
+            font-weight: bold;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="display-canvas"></canvas>
+    <div id="explainer">
+        <p>
+            On the right is an n body simulation, in which some number of objects interact gravitationally. The objects
+            cannot collide with one another.
+        </p>
+        <p>
+            Very quickly, the white objects split into multiple colours, this is because there are actually many n body
+            simulations happening in parallel, which don't affect one another. Each simulation uses the same initial
+            conditions, but a different
+            <em>integrator</em>. The integrators are:
+        <ul>
+            <li><span class="euler" onclick="toggleSim(0)">Euler</span>, the simplest integrator. Each frame, the forces
+                acting on each body
+                are evaluated. The body is moved forward by its velocity, and then its velocity is changed by that
+                acceleration. This is very inaccurate because the acceleration values are applied at a different place
+                from where they're calculated.</li>
+            <li><span class="adaptive-euler" onclick="toggleSim(1)">Adaptive Euler</span>, this integrator works exactly
+                like Euler, but slices
+                every frame into multiple steps. It tries different numbers of steps until adding more steps stops
+                making much of a difference. This lets you say "the error will be at most X", but overall is not very
+                efficient.</li>
+
+            <li><span class="verlet" onclick="toggleSim(2)">Verlet</span> integration moves the bodies without storing
+                their positions.
+                Instead, it stores the previous position, and uses it to infer the next position. From a very high
+                level, this is more accurate because it is dervied from a Taylor series, which uses higher order
+                derivatives than Euler integration. This one is commonly used in games.</li>
+
+            <li><span class="rk4" onclick="toggleSim(3)">Runge-Kutta 4</span> is a method to integrate a first order
+                differential equation by
+                making several assumptions about the change in a value over the timestep and using each guess to improve
+                the next. In this case, there are two first order differential equations, the velocity and the
+                acceleration, so RK4 is applied twice. It is very accurate, but also more computationally intensive.
+            </li>
+        </ul>
+        </p>
+
+        <p>WASD pans the view, and Up/Down arrow zoom in and out. Click the above names to toggle each system.</p>
+        <button onclick="slower()">Slow Down</button>
+        Speed: <span id="timewarp">1</span>x
+        <button onclick="faster()">Speed Up</button>
+        (this does not affect simulation accuracy)
+        <br>
+        <button onclick="loadSim(1)">Load Simple System</button>
+        <br>
+        <button onclick="loadSim(2)">Load Planet with Moon System</button>
+        <br>
+        <button onclick="loadSim(3)">Load Randomized System (very fun)</button>
+
+        <p>Further reading:</p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations">Wikipedia/Numerical
+                    methods for ordinary differential equations</a></li>
+            <li><a
+                    href="https://scicomp.stackexchange.com/questions/34257/solving-coupled-odes-using-runge-kutta-method/34330#34330">Some
+                    hints on 2nd order RK4</a></li>
+            <li><a href="https://www.algorithm-archive.org/contents/verlet_integration/verlet_integration.html">A
+                    derivation of Verlet integration</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
